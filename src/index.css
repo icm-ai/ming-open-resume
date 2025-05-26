@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Default font pairing */
+    --font-heading: "Merriweather", serif;
+    --font-body: "Open Sans", sans-serif;
+
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Default Palette (from src/const/colors.ts - defaultPalette) */
+    --color-primary: #09090b;
+    --color-secondary: #fafafa;
+    --color-accent: #fafafa;
+    --color-text-primary: #09090b;
+    --color-text-secondary: #737373;
+    --color-background: #ffffff;
+    --color-border: #e5e7eb;
+
+    /* Other variables */
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border); /* Updated to use new border variable */
+  }
+
+  body {
+    background-color: var(--color-background); /* Use new background variable */
+    color: var(--color-text-primary); /* Use new text primary variable */
+    font-family: var(--font-body); /* Apply body font */
+    font-size: 15px;
+  }
+
+  /* Apply heading font to heading elements */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .print-wrapper {
+    flex-basis: 900px;
+    padding: 16px;
+    overflow: auto;
+    scrollbar-width: thin;
+    background: white;
+  }
+
+  .form-label {
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    height: 32px;
+    margin-top: 8px;
+  }
+}
+
+@layer utilities {
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flex-end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .scroll-thin {
+    scrollbar-width: thin;
+  }
+
+  .icon-size {
+    width: 1em;
+    height: 1em;
+  }
+}

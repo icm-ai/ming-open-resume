@@ -1,0 +1,32 @@
+{
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
+  "headers": [
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=7200"
+        }
+      ]
+    },
+    {
+      "source": "/(avatar.jpg|image.png)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=36000"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}
