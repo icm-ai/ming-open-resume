@@ -88,13 +88,7 @@ const imageSectionSchema = z.object({
   }),
 })
 
-const widgetSchema = z.discriminatedUnion('type', [
-  basicInfoSchema,
-  titleSectionSchema,
-  experienceTimeSchema,
-  textContentSchema,
-  imageSectionSchema,
-])
+// Defined below as an exported const with all widget types
 
 // Schema for individual items within the VisualList
 export const visualListItemSchema = z.object({
