@@ -6,6 +6,7 @@ export type WidgetType =
   | 'ExperienceTime'
   | 'TextContent'
   | 'ImageSection'
+  | 'VisualList'
 
 export interface WidgetMaterial {
   type: WidgetType
@@ -38,6 +39,11 @@ export type WidgetNode =
       type: 'ImageSection'
       id: string
       data: ImageSectionData
+    }
+  | {
+      type: 'VisualList'
+      id: string
+      data: VisualListData
     }
 
 export interface StyleData {
@@ -91,3 +97,19 @@ export interface ImageSectionData extends CommonStyleData {
     borderRadius: number
   }
 }
+
+export interface VisualListData extends CommonStyleData {
+  propsData: {
+    title: string
+    items: VisualListItemData[]
+    layout: 'grid' | 'list'
+    iconStyle: 'circle' | 'square' | 'none'
+  }
+}
+
+export interface VisualListItemData {
+  icon: string
+  label: string
+  level?: number
+}
+

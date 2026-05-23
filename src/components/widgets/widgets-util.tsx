@@ -193,8 +193,6 @@ export function createWidgetsNode(type: WidgetType): WidgetNode {
         },
       }
     default: {
-      // Ensure all widget types are handled
-      const exhaustiveCheck: never = type;
       // Fallback for safety, though theoretically unreachable if types are correct
       throw new Error(`Unhandled widget type: ${type}`);
     }
@@ -213,7 +211,6 @@ export const createLinkItem: () => LinkItemData = () => {
 // 创建默认的简历数据，包含基础的组件结构
 export const createDefaultData: () => WidgetNode[] = () => {
   const isChinese = i18n.language === 'zh'
-  // 返回包含默认组件的数组
   return [
     {
       type: 'BasicInfo',
@@ -223,18 +220,18 @@ export const createDefaultData: () => WidgetNode[] = () => {
           avatarUrl: '/avatar.jpg',
           avatarSize: 86,
           avatarRound: false,
-          name: isChinese ? '陈 明' : 'Ming Chen',
-          jobTitle: isChinese ? '算法工程师' : 'Machine Learning Engineer',
+          name: isChinese ? '张 三' : 'San Zhang',
+          jobTitle: isChinese ? '前端开发工程师' : 'Frontend Engineer',
           linksGroup: [
             [
               {
                 href: '',
-                content: '1991/09',
+                content: '1995/10',
                 icon: 'cake',
               },
               {
                 href: '',
-                content: '1771313747',
+                content: '177-0000-0000',
                 icon: 'phone',
               },
             ],
@@ -246,7 +243,7 @@ export const createDefaultData: () => WidgetNode[] = () => {
               },
               {
                 href: '',
-                content: 'bestchenming@gmail.com',
+                content: 'template@example.com',
                 icon: 'gmail',
               },
             ],
@@ -259,7 +256,7 @@ export const createDefaultData: () => WidgetNode[] = () => {
     {
       type: 'TitleSection',
       id: 'm5nhbbzu_29xe',
-data: {
+      data: {
         propsData: { title: isChinese ? '专业技能' : 'Professional Skills' },
         styleData: { marginTop: 6, marginBottom: 6 },
       },
@@ -286,11 +283,11 @@ data: {
     },
     {
       type: 'ExperienceTime',
-      id: 'm5nhe7a6_uswu',
+      id: 'm5nhe7a6_time',
       data: {
         propsData: {
-          title: isChinese ? 'XX有限公司' : 'XX Company',
-          dateRange: '2000/07 - 2010/07',
+          title: isChinese ? '某互联网科技有限公司' : 'Some Tech Company',
+          dateRange: '2020/07 - 2023/07',
         },
         styleData: { marginTop: 0, marginBottom: 0 },
       },
@@ -301,10 +298,36 @@ data: {
       data: {
         propsData: {
           content: isChinese
-            ? '<h3>XX项目 - 高级算法工程师</h3><ul><li><p>负责从需求分析到算法设计、功能开发及性能优化的全流程开发工作。</p></li><li><p>坚持与产品、设计、后端团队紧密协作，推动敏捷开发流程和 CI/CD 工具链的落地，确保高质量的交付。</p></li><li><p>通过深入研究算法效果及性能，成功优化了算法模型，提升了算法的准确性和效率</p></li></ul>'
-            : '<h3>XX Project - Senior Algorithm Engineer</h3><ul><li><p>Led the entire development process from requirement analysis to algorithm design, development, and performance optimization.</p></li><li><p>Strengthened collaboration between product, design, and backend teams. Implemented and deployed CI/CD pipeline and CI/CD tools. Ensured high-quality delivery.</p></li><li><p>Successfully optimized the algorithm model, resulting in improved accuracy and efficiency.</p></li></ul>',
+            ? '<h3>高级前端开发工程师</h3><ul><li><p>负责公司核心业务系统的前端架构设计与开发，主导技术栈由 Vue 2 迁移至 Vue 3 + TypeScript。</p></li><li><p>与产品和设计团队合作，推动敏捷开发，使用 Vite 优化构建流程，使首屏加载时间缩短 40%。</p></li><li><p>封装核心业务组件库，提升团队二次开发效率，并在内部进行持续集成工具链落地。</p></li></ul>'
+            : '<h3>Senior Frontend Engineer</h3><ul><li><p>Led frontend architecture and development of core business systems, migrating tech stack from Vue 2 to Vue 3 + TypeScript.</p></li><li><p>Collaborated with product and design teams, optimized build pipelines using Vite, reducing FCP by 40%.</p></li><li><p>Developed shareable UI components, enhancing team efficiency and standardizing CI/CD pipelines.</p></li></ul>',
         },
         styleData: { marginTop: 0, marginBottom: 0 },
+      },
+    },
+    {
+      type: 'TitleSection',
+      id: 'm5nh7g2t_skill_title',
+      data: {
+        propsData: { title: isChinese ? '可视化技能清单 (新功能演示)' : 'Visual Skills (New Feature Demo)' },
+        styleData: { marginTop: 6, marginBottom: 6 },
+      },
+    },
+    {
+      type: 'VisualList',
+      id: 'm5nh7g2t_vis_list',
+      data: {
+        propsData: {
+          title: isChinese ? '前端核心掌握程度' : 'Frontend Core Mastery',
+          items: [
+            { icon: 'Code', label: 'React / Next.js', level: 5 },
+            { icon: 'Cpu', label: 'TypeScript', level: 4 },
+            { icon: 'Palette', label: 'Tailwind CSS', level: 5 },
+            { icon: 'Terminal', label: 'Node.js & Database', level: 3 },
+          ],
+          layout: 'grid',
+          iconStyle: 'circle',
+        },
+        styleData: { marginTop: 6, marginBottom: 6 },
       },
     },
   ]

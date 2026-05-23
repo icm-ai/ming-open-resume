@@ -3,6 +3,7 @@ import { ExperienceTime } from '@/components/widgets/node/experience-time.tsx'
 import { ImageSection } from '@/components/widgets/node/image-section.tsx'
 import { TextContent } from '@/components/widgets/node/text-content.tsx'
 import { TitleSection } from '@/components/widgets/node/title-section.tsx'
+import { VisualList } from '@/components/widgets/visual-list.tsx'
 import type { WidgetNode } from '@/components/widgets/widgets-type.d.ts'
 import { getBasename } from '@/components/widgets/widgets-util.tsx'
 import { S_N_PRINT } from '@/const/storage.ts'
@@ -50,6 +51,8 @@ const PagePrint = () => {
         return <TextContent data={item.data.propsData} />
       case 'ImageSection':
         return <ImageSection data={item.data.propsData} />
+      case 'VisualList':
+        return <VisualList data={item.data} />
     }
   }
 

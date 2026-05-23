@@ -1,6 +1,6 @@
-import React from 'react';
 import { z } from 'zod';
 import { visualListSchema, visualListItemSchema } from '../widgets-schema';
+
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import {
